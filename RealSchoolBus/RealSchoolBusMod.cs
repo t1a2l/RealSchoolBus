@@ -4,6 +4,7 @@ using ICities;
 using System;
 using RealSchoolBus.AI;
 using UnityEngine;
+using System.Reflection;
 
 namespace RealSchoolBus {
 
@@ -28,8 +29,9 @@ namespace RealSchoolBus {
         {
             try {
                 GameObject schoolObject = new GameObject("SchoolWorldInfoPanel");
-                schoolWorldInfoPanel = schoolObject.AddComponent<SchoolWorldInfoPanel>();
-                GameObject.Instantiate(schoolObject);
+                schoolWorldInfoPanel = schoolObject.AddComponent<SchoolWorldInfoPanel>();  
+                var result = GameObject.Instantiate(schoolWorldInfoPanel.movingPanel, schoolWorldInfoPanel.gameObject.transform);
+                typeof(SchoolWorldInfoPanel).GetField("m_Component", BindingFlags.Public | BindingFlags.Instance).SetValue(schoolWorldInfoPanel, result);
 
                 var loadedBuildingInfoCount = PrefabCollection<BuildingInfo>.LoadedCount();
                 for (uint i = 0; i < loadedBuildingInfoCount; i++) {
