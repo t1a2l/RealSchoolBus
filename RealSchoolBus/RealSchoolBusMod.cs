@@ -31,7 +31,7 @@ namespace RealSchoolBus {
                 GameObject schoolObject = new GameObject("SchoolWorldInfoPanel");
                 schoolWorldInfoPanel = schoolObject.AddComponent<SchoolWorldInfoPanel>();  
                 var result = GameObject.Instantiate(schoolWorldInfoPanel.movingPanel, schoolWorldInfoPanel.gameObject.transform);
-                typeof(SchoolWorldInfoPanel).GetField("m_Component", BindingFlags.Public | BindingFlags.Instance).SetValue(schoolWorldInfoPanel, result);
+                typeof(SchoolWorldInfoPanel).GetField("m_Component", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(schoolWorldInfoPanel, result);
 
                 var loadedBuildingInfoCount = PrefabCollection<BuildingInfo>.LoadedCount();
                 for (uint i = 0; i < loadedBuildingInfoCount; i++) {
