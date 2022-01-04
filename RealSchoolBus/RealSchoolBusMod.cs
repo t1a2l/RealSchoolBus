@@ -2,10 +2,7 @@ using RealSchoolBus.Utils;
 using CitiesHarmony.API;
 using ICities;
 using System;
-using RealSchoolBus.AI;
-using UnityEngine;
-
-using ColossalFramework.UI;
+using RealSchoolBus.Panels;
 
 namespace RealSchoolBus {
 
@@ -36,6 +33,7 @@ namespace RealSchoolBus {
                         AiReplacementHelper.ApplyNewAIToBuilding(bi);
                     }
                 }
+                BuildingPanelManager.Hook();
                 LogHelper.Information("Reloaded Mod");
             }
             catch (Exception e) {

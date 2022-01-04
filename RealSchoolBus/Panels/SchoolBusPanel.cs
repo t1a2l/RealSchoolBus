@@ -1,5 +1,6 @@
 using System;
 using ColossalFramework;
+using RealSchoolBus.AI;
 
 namespace RealSchoolBus.Panels
 {
@@ -57,7 +58,7 @@ namespace RealSchoolBus.Panels
 
             BuildingInfo info = Singleton<BuildingManager>.instance.m_buildings.m_buffer[targetID].Info;
 
-            if (info.GetAI() is SchoolAI schoolAI && schoolAI.m_info.GetClassLevel() < ItemClass.Level.Level3)
+            if (info.GetAI() is NewSchoolAI newSchoolAI && newSchoolAI.m_info.GetClassLevel() < ItemClass.Level.Level3)
             {
                 Show();
             }

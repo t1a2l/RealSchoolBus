@@ -50,7 +50,10 @@ namespace RealSchoolBus.Panels
         internal static void TargetChanged()
         {
             // Communicate target change to the panel (if it's currently instantiated).
-            Panel?.BuildingChanged();
+            if(Panel != null)
+            {
+                Panel.BuildingChanged();
+            }
         }
 
 

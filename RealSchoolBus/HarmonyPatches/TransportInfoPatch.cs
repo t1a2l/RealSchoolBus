@@ -8,7 +8,7 @@ namespace RealSchoolBus.HarmonyPatches {
 
         [HarmonyPatch(typeof(TransportInfo), "InitializePrefab")]
         [HarmonyPostfix]
-        public static void InitializePrefab()
+        public static void InitializePrefab(TransportInfo __instance)
 	    {
             bool isValueDefined1 = Enum.IsDefined(typeof(TransportInfo.TransportType), 30);
             if(!isValueDefined1)
