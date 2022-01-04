@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using RealSchoolBus.AI;
+using RealSchoolBus.Panels;
 
 namespace RealSchoolBus.HarmonyPatches
 {
