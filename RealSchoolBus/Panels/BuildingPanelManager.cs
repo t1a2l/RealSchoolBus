@@ -2,7 +2,7 @@
 using UnityEngine;
 using ColossalFramework.UI;
 
-namespace RealSchoolBus.AI
+namespace RealSchoolBus.Panels
 {
     /// <summary>
     /// Static class to manage the ABLC building panel.
