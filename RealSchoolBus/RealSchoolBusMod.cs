@@ -4,7 +4,8 @@ using ICities;
 using System;
 using RealSchoolBus.AI;
 using UnityEngine;
-using System.Reflection;
+
+using ColossalFramework.UI;
 
 namespace RealSchoolBus {
 
@@ -12,8 +13,6 @@ namespace RealSchoolBus {
 
         string IUserMod.Name => "Real School Bus Mod";
         string IUserMod.Description => "Allow elementry and high schools to set up a line and send buses to pcikup and dropoff students";
-
-        public static SchoolWorldInfoPanel schoolWorldInfoPanel;
 
         public void OnEnabled()
         {
@@ -27,12 +26,8 @@ namespace RealSchoolBus {
 
         public override void OnLevelLoaded(LoadMode mode)
         {
-            try {
-                GameObject schoolObject = new GameObject("SchoolWorldInfoPanel");
-                schoolWorldInfoPanel = schoolObject.AddComponent<SchoolWorldInfoPanel>();  
-                var result = GameObject.Instantiate(schoolWorldInfoPanel.movingPanel, schoolWorldInfoPanel.gameObject.transform);
-                typeof(SchoolWorldInfoPanel).GetField("m_Component", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(schoolWorldInfoPanel, result);
-
+            try
+            {              
                 var loadedBuildingInfoCount = PrefabCollection<BuildingInfo>.LoadedCount();
                 for (uint i = 0; i < loadedBuildingInfoCount; i++) {
                     var bi = PrefabCollection<BuildingInfo>.GetLoaded(i);
