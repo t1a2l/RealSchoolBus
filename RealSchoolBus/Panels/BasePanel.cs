@@ -10,6 +10,8 @@ namespace RealSchoolBus.Panels
     /// </summary>
     internal class BasePanel : UIPanel
     {
+        private CityServiceWorldInfoPanel _cityServiceWorldInfoPanel;
+
         // Layout constants.
         protected const float Margin = 5f;
         protected const float MenuWidth = 60f;
@@ -33,6 +35,8 @@ namespace RealSchoolBus.Panels
             try
             {
                 // Basic setup.
+                name = "SchoolBusRoutes";
+                AlignTo(parent, UIAlignAnchor.TopRight);
                 autoLayout = false;
                 backgroundSprite = "MenuPanel2";
                 opacity = 0.95f;
