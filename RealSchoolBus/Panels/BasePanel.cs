@@ -10,8 +10,6 @@ namespace RealSchoolBus.Panels
     /// </summary>
     internal class BasePanel : UIPanel
     {
-        private CityServiceWorldInfoPanel _cityServiceWorldInfoPanel;
-
         // Layout constants.
         protected const float Margin = 5f;
         protected const float MenuWidth = 60f;
