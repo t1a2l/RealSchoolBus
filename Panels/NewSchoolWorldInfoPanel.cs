@@ -269,7 +269,7 @@ namespace RealSchoolBus.Panels
 
         public void OnDrawRoute()
         {
-            TransportInfo info = Singleton<TransportManager>.instance.GetTransportInfo(TransportInfo.TransportType.EvacuationBus);
+            TransportInfo info = Singleton<TransportManager>.instance.GetTransportInfo((TransportInfo.TransportType)18);
             ushort building = m_InstanceID.Building;
             if (!(info != null) || building == 0)
             {

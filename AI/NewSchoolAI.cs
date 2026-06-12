@@ -447,6 +447,15 @@ namespace RealSchoolBus.AI
             return true;
         }
 
+        public override bool CanChangeVehicle(ushort buildingId)
+        {
+            if (m_schoolBusCount > 0 && m_transportInfo != null && m_transportInfo.m_transportType == (TransportInfo.TransportType)18)
+            {
+                return base.CanChangeVehicle(buildingId);
+            }
+            return false;
+        }
+
         public override TransportInfo GetTransportLineInfo()
 		{
 			return m_transportInfo;
