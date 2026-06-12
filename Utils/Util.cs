@@ -11,16 +11,11 @@ namespace RealSchoolBus.Utils
     {
         public static object GetInstanceField(Type type, object instance, string fieldName)
         {
-            const BindingFlags bindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
-                                           | BindingFlags.Static;
+            const BindingFlags bindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static;
             var field = type.GetField(fieldName, bindFlags);
-            if (field == null)
-            {
-                throw new Exception($"Type '{type}' doesn't have field '{fieldName}");
-            }
-            return field.GetValue(instance);
+            return field == null ? throw new Exception($"Type '{type}' doesn't have field '{fieldName}") : field.GetValue(instance);
         }
-        
+
         public static bool IsModActive(string modNamePart)
         {
             try

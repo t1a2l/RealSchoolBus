@@ -1,9 +1,10 @@
 using ColossalFramework.UI;
 using UnityEngine;
 
-namespace RealSchoolBus.Utils {
+namespace RealSchoolBus.Utils 
+{
    public static class UiUtil
-    {
+   {
         private const int ButtonSize = 16;
 
         public static UISprite CreateAllowSprite(UIComponent parentComponent, MouseEventHandler handler, Vector3 offset)
@@ -12,10 +13,8 @@ namespace RealSchoolBus.Utils {
                 parentComponent, handler);
         }
 
-        public static UISprite CreateSprite(string buttonName, string tooltip, Vector3 offset,
-            UIComponent parentComponent, MouseEventHandler handler)
+        public static UISprite CreateSprite(string buttonName, string tooltip, Vector3 offset, UIComponent parentComponent, MouseEventHandler handler)
         {
-
             var sprite = UIView.GetAView().AddUIComponent(typeof(UISprite)) as UISprite;
             if (sprite == null)
             {
