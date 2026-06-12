@@ -49,4 +49,7 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Panels\" />
+  </ItemGroup>
 </Project>

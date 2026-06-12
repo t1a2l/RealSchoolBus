@@ -52,7 +52,7 @@ namespace RealSchoolBus.HarmonyPatches
         [HarmonyReversePatch]
         [HarmonyPatch(typeof(CarAI), "GetColor")]
         [MethodImpl(MethodImplOptions.NoInlining)]
-        public static Color BaseGetColor(CarAI instance, ushort vehicleID, ref Vehicle data, InfoManager.InfoMode infoMode, InfoManager.SubInfoMode subInfoMode)
+        private static Color BaseGetColor(CarAI instance, ushort vehicleID, ref Vehicle data, InfoManager.InfoMode infoMode, InfoManager.SubInfoMode subInfoMode)
         {
             string message = "GetColor reverse Harmony patch wasn't applied";
             Debug.LogError(message);
